@@ -302,16 +302,6 @@ class MapActivity : SDActivity(), OnMapReadyCallback {
         }
     }
 
-    private fun packStudent(intent: Intent, student: Student) {
-        intent.putExtra("name", student.name)
-        intent.putExtra("id", student.studentId)
-        intent.putExtra("address", student.address)
-        intent.putExtra("latitude", student.latitude)
-        intent.putExtra("longitude", student.longitude)
-        intent.putExtra("phone", student.phone)
-        intent.putExtra("image", student.image)
-    }
-
     private fun setText(view: LinearLayout, student: Student) {
         val title       = view.findViewById<TextView>(R.id.title)
         val id          = view.findViewById<TextView>(R.id.id)

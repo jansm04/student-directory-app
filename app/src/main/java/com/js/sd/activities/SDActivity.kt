@@ -12,6 +12,7 @@ import androidx.core.app.ActivityCompat
 import com.js.sd.R
 import com.js.sd.exceptions.PermissionDeniedException
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.js.sd.model.Student
 
 open class SDActivity : AppCompatActivity() {
 
@@ -72,4 +73,13 @@ open class SDActivity : AppCompatActivity() {
         }
     }
 
+    protected fun packStudent(intent: Intent, student: Student) {
+        intent.putExtra("name", student.name)
+        intent.putExtra("id", student.studentId)
+        intent.putExtra("address", student.address)
+        intent.putExtra("latitude", student.latitude)
+        intent.putExtra("longitude", student.longitude)
+        intent.putExtra("phone", student.phone)
+        intent.putExtra("image", student.image)
+    }
 }

@@ -155,16 +155,6 @@ class MainActivity : SDActivity() {
         }
     }
 
-    private fun packStudent(intent: Intent, student: Student) {
-        intent.putExtra("name", student.name)
-        intent.putExtra("id", student.studentId)
-        intent.putExtra("address", student.address)
-        intent.putExtra("latitude", student.latitude)
-        intent.putExtra("longitude", student.longitude)
-        intent.putExtra("phone", student.phone)
-        intent.putExtra("image", student.image)
-    }
-
     private fun packAllStudents(intent: Intent) {
         val n           = students.size
         val names       = arrayOfNulls<String>(n)
