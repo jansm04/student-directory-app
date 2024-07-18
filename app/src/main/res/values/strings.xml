@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Student Directory</string>
+    <string name="name">Name</string>
+    <string name="student_id">Student ID</string>
+    <string name="placeholder">---</string>
+    <string name="details">details</string>
+    <string name="address">Address</string>
+    <string name="longitude">Longitude</string>
+    <string name="latitude">Latitude</string>
+    <string name="phone">Phone</string>
+    <string name="map">Map</string>
+    <string name="location">Location</string>
+    <string name="home">Home</string>
+    <string name="image">image</string>
+    <string name="web">Web</string>
+    <string name="start_tracking">start tracking</string>
+    <string name="stop_tracking">stop tracking</string>
+    <string name="oops">Oops! Something went wrong.</string>
+    <string name="restart_app">Restart App</string>
+    <string name="close_app">Close App</string>
+    <string name="scroll">scrollview</string>
+    <string name="usericon">usericon</string>
+    <string name="you_are_here">You Are Here.</string>
+    <string name="refresh">Refresh</string>
+</resources>

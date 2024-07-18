@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="details_row_size">16sp</dimen>
+    <dimen name="row_padding_vertical">16dp</dimen>
+    <dimen name="row_padding_horizontal">28dp</dimen>
+    <dimen name="icon_padding_right">8dp</dimen>
+</resources>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_home"
+        android:icon="@drawable/icons8_home"
+        android:onClick="handleHomeButton"
+        android:title="@string/home" />
+    <item
+        android:id="@+id/nav_map"
+        android:icon="@drawable/baseline_map_24"
+        android:onClick="handleMapButton"
+        android:title="@string/map" />
+    <item
+        android:id="@+id/nav_web"
+        android:icon="@drawable/baseline_cloud_24"
+        android:onClick="handleWebButton"
+        android:title="@string/web" />
+</menu>
