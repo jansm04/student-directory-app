@@ -238,7 +238,7 @@ class MapActivity : SDActivity(), OnMapReadyCallback {
             .build()
     }
 
-    private fun createInfoWindowAdapter() {
+    private fun setInfoWindowAdapter() {
         map.setInfoWindowAdapter(object : GoogleMap.InfoWindowAdapter {
             override fun getInfoContents(marker: Marker): View? {
                 // use default info window frame
@@ -262,6 +262,28 @@ class MapActivity : SDActivity(), OnMapReadyCallback {
         })
     }
 
+    private fun setInfoWindowListener() {
+        map.setOnInfoWindowClickListener {
+            val student = markerStudentMap[it]
+            if (student != null) {
+                val detailsIntent = Intent(
+                    this@MapActivity,
+                    DetailsActivity::class.java
+                )
+                packStudent(detailsIntent, student)
+
+                // forward all student data
+                intent.extras?.let { extras -> detailsIntent.putExtras(extras) }
+
+                Logman.logInfoMessage(
+                    "Starting details activity for {} from map...",
+                    student.name
+                )
+                startActivity(detailsIntent)
+            }
+        }
+    }
+
     private fun fillUserView(marker: Marker, view: LinearLayout) {
         Logman.logInfoMessage("Displaying user info window....")
         val coordinates = view.findViewById<TextView>(R.id.coordinates)
@@ -278,6 +300,16 @@ class MapActivity : SDActivity(), OnMapReadyCallback {
         if (image != null) {
             setImage(view, image)
         }
+    }
+
+    private fun packStudent(intent: Intent, student: Student) {
+        intent.putExtra("name", student.name)
+        intent.putExtra("id", student.studentId)
+        intent.putExtra("address", student.address)
+        intent.putExtra("latitude", student.latitude)
+        intent.putExtra("longitude", student.longitude)
+        intent.putExtra("phone", student.phone)
+        intent.putExtra("image", student.image)
     }
 
     private fun setText(view: LinearLayout, student: Student) {
@@ -322,7 +354,8 @@ class MapActivity : SDActivity(), OnMapReadyCallback {
         this.map = map
         getLastLocation()
         initMaps()
-        createInfoWindowAdapter()
+        setInfoWindowAdapter()
+        setInfoWindowListener()
     }
 
     override fun onPause() {
@@ -348,5 +381,4 @@ class MapActivity : SDActivity(), OnMapReadyCallback {
     override fun handleWebButton(item: MenuItem) {
         startActivityWithSameData(WebActivity::class.java)
     }
-
 }
