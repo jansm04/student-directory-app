@@ -166,24 +166,24 @@ class MainActivity : SDActivity() {
     }
 
     private fun packAllStudents(intent: Intent) {
-        val n = students.size
-        val names = arrayOfNulls<String>(n)
-        val ids = IntArray(n)
-        val addresses = arrayOfNulls<String>(n)
-        val latitudes = DoubleArray(n)
-        val longitudes = DoubleArray(n)
-        val phones = arrayOfNulls<String>(n)
-        val images = arrayOfNulls<String>(n)
+        val n           = students.size
+        val names       = arrayOfNulls<String>(n)
+        val ids         = IntArray(n)
+        val addresses   = arrayOfNulls<String>(n)
+        val latitudes   = DoubleArray(n)
+        val longitudes  = DoubleArray(n)
+        val phones      = arrayOfNulls<String>(n)
+        val images      = arrayOfNulls<String>(n)
 
         for (i in 0 until n) {
-            val student = students[i]
-            names[i] = student.name
-            ids[i] = student.studentId
-            addresses[i] = student.address
-            latitudes[i] = student.latitude
-            longitudes[i] = student.longitude
-            phones[i] = student.phone
-            images[i] = student.image
+            val student     = students[i]
+            names[i]        = student.name
+            ids[i]          = student.studentId
+            addresses[i]    = student.address
+            latitudes[i]    = student.latitude
+            longitudes[i]   = student.longitude
+            phones[i]       = student.phone
+            images[i]       = student.image
         }
         intent.putExtra("names", names)
         intent.putExtra("ids", ids)

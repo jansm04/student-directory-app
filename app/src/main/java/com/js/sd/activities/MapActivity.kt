@@ -295,6 +295,7 @@ class MapActivity : SDActivity(), OnMapReadyCallback {
     }
 
     private fun setImage(view: LinearLayout, image: ImageView) {
+        // remove parent in case marker has been clicked before
         if (image.parent != null) {
             val parent = image.parent as ViewGroup
             parent.removeView(image)
